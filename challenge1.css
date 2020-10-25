@@ -1,0 +1,133 @@
+/*************************
+ *  your code goes here  *
+ *************************/
+
+.bxc .bx-creative {
+  background-color: #FCC218;
+  color: #010866;
+  font-family: Arial, Helvetica, sans-serif;
+  white-space: normal;
+  position: relative;
+}
+
+.bx-logo {
+  margin: 20px auto;
+  width: 30%;
+}
+
+.bx-row-headline {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 4px;
+}
+
+.bx-row-headline-2 {
+  font-size: 55px;
+  line-height: 55px;
+  padding-bottom: 10px;
+
+}
+
+.bx-row-subheadline-1 {
+  font-size: 14px;
+  font-weight: 100;
+  padding-bottom: 20px;
+}
+
+
+.bx-group-2 {
+  float: none !important;
+  width: 60% !important;
+  margin: 0 auto !important;
+  padding-bottom: 40px !important;
+  
+}
+
+.bx-lock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -75px;
+  top: -25px;
+  width: 200px;
+  height: 100px;
+  box-shadow: 1px 10px 10px 4px rgba(0,0,0,0.13);
+  -webkit-box-shadow: 1px 10px 10px 4px rgba(0,0,0,0.13);
+  -moz-box-shadow: 1px 10px 10px 4px rgba(0,0,0,0.13);
+  z-index: 1;
+  transform: rotate(45deg);
+}
+
+#lock {
+  font-size: 40px;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 40px;
+  left: 80px;
+  cursor: pointer;
+  text-shadow: 3px 4px 5px rgba(0,0,0,0.3);
+
+}
+
+input, button {
+  text-align: center;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.btn {
+  position: relative;
+  background: rgb(39,85,162);
+  background: linear-gradient(180deg, rgba(39,85,162,1) 0%, rgba(2,9,109,1) 100%);
+}
+
+#arrow {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  font-size: 25px;
+}
+
+#arrow:after {
+  content: '|';
+  position: absolute;
+  opacity: 1;
+  top: -3px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+@media only screen and (max-width: 550px) {
+  .bx-group-2 {
+    width: 90% !important;
+  }
+
+  .bx-lock {
+    right: -45px;
+    top: -10px;
+    width: 150px;
+    height: 50px;
+  }
+
+  #lock {
+    font-size: 25px;
+    top: 20px;
+    right: 90px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .bx-row-headline {
+    line-height: 40px;
+  }
+}
+
+
+@media only screen and (max-width: 300px) {
+  .bx-lock {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+}
