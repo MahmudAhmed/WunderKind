@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $overlay = $('<div id="overlay"></div>');
   $modal = $('<div id="modal"></div>');
-  $content = $('<h2 id="content"></h2>');
+  $content = $('<div id="content"></div>');
   $buttons = $('<div></div>');
   $cart = $('<button class="buttons"><a id="cart" href="https://www.marmot.com/cart">Go To Cart</a></button>');
   $close = $('<button class="buttons"><a id="close" href="#">Close</a></button>');
@@ -14,24 +14,23 @@ $(document).ready(function() {
   const name = product.innerText; 
   const price = $(".prices")[0].innerText.replace( /[^\d\.]*/g, '');
   const discountPrice = price - (price * 0.15);
-
-  $content.text(`🎉 Get this ${name} for $${discountPrice} with a 15% discount 🎉`)
   
-
+  $text = $(`<h2>🎉 Get this ${name} for <span id="sale">$${discountPrice}</span> with a 15% discount 🎉</h2>`);
+  $content.append($text);
   $buttons.append($cart, $close);
   $container.append($content, $buttons);
   $modal.append($container);
 
   $content.css({
     "text-align": "center"
-  })
-  
+  });
+ 
   $buttons.css({
     "display": "flex",
     "justify-content": "center",
     "flex-direction": "row",
     "align-items": "center",
-  })
+  });
 
   $overlay.css({
     "position": "fixed", 
@@ -42,7 +41,7 @@ $(document).ready(function() {
     "background": "#000",
     "opacity": 0.5,
     "z-index": 1, 
-  })
+  });
 
   $modal.css({
     "width": "100%",
@@ -56,7 +55,7 @@ $(document).ready(function() {
   $container.css({
     "width": "80%",
     "margin": "10px 0"
-  })
+  });
 
   $(".swatches").on('click', '.swatch', function() {
     $overlay.show();
@@ -64,15 +63,20 @@ $(document).ready(function() {
 
     $cart.css({
       "margin-right": "10px",
-    })
+    });
+
+
+    $("#sale").css({
+      "color":"red"
+    });
     
     $(".buttons").css({
       "background-color": "white",
       "border": "none",
       "padding": "16px 32px",
       "cursor": "pointer",
-    })
-    
+    });
+
   });
 
   $close.on('click', function() {
@@ -81,5 +85,5 @@ $(document).ready(function() {
   });
   
   $('body').append($overlay, $modal);
-})
+});
 
