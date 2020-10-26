@@ -14,7 +14,7 @@ $(document).ready(function() {
   const name = product.innerText; 
   const price = $(".prices")[0].innerText.replace( /[^\d\.]*/g, '');
   const discountPrice = price - (price * 0.15);
-  
+
   $text = $(`<h2>🎉 Get this ${name} for <span id="sale">$${discountPrice}</span> with a 15% discount 🎉</h2>`);
   $content.append($text);
   $buttons.append($cart, $close);
@@ -67,7 +67,7 @@ $(document).ready(function() {
 
 
     $("#sale").css({
-      "color":"red"
+      "color": "#D92732"
     });
     
     $(".buttons").css({
@@ -83,7 +83,7 @@ $(document).ready(function() {
     $modal.hide();
     $overlay.hide();
   });
-  
+
   $('body').append($overlay, $modal);
 });
 
